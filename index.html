@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representation Theorie Des Graphes</title>
+    <link href = "style.css" rel = "stylesheet">
+    
+</head>
+<body>
+    <!--
+        <canvas id = "canvas" width = "500px" 
+    height="500px" style = "background-color: rgb(52, 52, 52);"></canvas>
+    -->
+    
+
+    <svg id = "drawingArea">
+
+    </svg>
+
+    <div class = "menu">
+        <div class = "Buttons" id = "buttonsDiv">
+            <table class = "menuTable">
+                <tr>
+                    <td>
+                        <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
+                            <button id = "insertButton" style = "display: none;"></button>
+                            Insérer Sommet
+                        </label>
+                    </td>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
+                            <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
+                            Dessiner Arêtes 
+                        </label>
+                    </td>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
+                            <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
+                            Dessiner Arc
+                        </label>
+                    </td>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                            <button onclick="modifySideBar()" style = "display: none;"></button>
+                            Modifier
+                        </label>
+                    </td>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                            <button onclick="algoSideBar()" style = "display: none;"></button>
+                            Algorithmes
+                        </label>
+                    </td>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                            <button onclick="aboutSideBar()" id = "About" style = "display: none;"></button>
+                            À propos
+                        </label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+    
+        <div class = "ModifySideBar" id = "ModifySideBar">
+            <div class = "Modify">
+                <table class = "ModifyTable">
+                    <tr>
+                        <td>
+                            <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                                <input class = "CheckBox" type="checkbox" id = "deleteCheckbox" onclick="deleteElem()">
+                                Delete 
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                                <input onclick= "addWeightsCheckBox()" class = "CheckBox" type="checkbox" id = "weightCheckbox">
+                                Add weights to paths
+                            </label>
+                            <script src = "edges.js"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                                <input onclick= "graphValuesCheckBox()" class = "CheckBox" type="checkbox" id = "valuesCheckBox">
+                                Change Node Values 
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
+                                <button onclick="save()" style = "display: none;"></button>
+                                Save
+                            </label>
+                            
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
+                                <button onclick="load()" style = "display: none;"></button>
+                                Load
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    
+        <div class = "AlgorithmsSideBar" id = "AlgoSideBar">
+            <div class = "algo">
+                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
+                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                    Djikstra 
+                </label>
+                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem2">
+                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                    Wershell 
+                </label>
+                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem3">
+                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                    Bonefeud 
+                </label>
+            </div>
+        </div>
+
+        <div class = "About" id = "AboutSideBar">
+            <div class = "Credit" style = "font-size: 17px;">
+                <h1>Graph Theory Visualizer</h1>
+            </div>
+            <div class = "Credit">
+                Crée par: <br>
+                Prenom: Djeffal Khaled Faiz <br>
+                Matricule: 222231353316 <br>
+            </div>
+            <br>
+            <br>
+            <div class = "Guide" style = "font-size: 17px;">
+                GUIDE: <br>
+                Insert Graph: Inserts a node and gives it a value based on how many existant nodes.<br>
+                Draw Path: Draws an edge by default and awaits confirmation by the user in order to make the changes final.<br>
+                Delete: Deletes an element of type node or edge, chosen by clicking on said element. <br>
+                Modify:
+                <ol>
+                    <li>Change Graph Type: Changes the graph's type from non-oriented to oriented, which changes the behaviour of the Draw Path button.</li>
+                    <li>Add Weight to Paths: Adds a weight of value 0 by default to every existant paths, transforming the 
+                        graph into a network. You change the value of each weight by click on the numbers</li>
+                    <li>Change Node Values: Allows the user to change the nodes' values</li>
+                    <li>Confirm Graph Values: Confirms both the weight and the graph values.</li>
+                    <li>Save: Saves the graph into the database</li>
+                    <li>Save: Loads the graph from the database</li>
+                </ol>
+                Algorithms: Shows the functionality of many Graph Theory algorithms.
+            </div>
+        </div>
+
+
+        
+    
+        
+    </div>
+
+    
+    
+    <script src = "graphs.js"></script>
+
+    <script src = "edges.js"></script>
+    <script src = "arcs.js"></script>
+
+    <script src = "delete.js"></script>
+
+    <script src = "algo.js"></script>
+    <script src = "modify.js"></script>
+    <script src = "about.js"></script>
+
+
+    <script src = "SaveLoad.js"></script>
+
+    <script src = "script.js"></script>
+
+    
+    
+
+</body>
+</html>

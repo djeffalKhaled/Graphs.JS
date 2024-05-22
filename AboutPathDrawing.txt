@@ -1,0 +1,44 @@
+Main issue for now is that paths do not update once you move the node
+
+--> We know that the path SVG is represented by two values:
+        - M x y, which is the first point representing the first clicked node
+        - L x y, which is the second point representing the second clicked node
+
+--> Thus we have access to two things
+        - The SVG vector data (M x y, L x y)
+        - The two nodes' current position (node1 x y, node2 x y)
+
+Algorithm:
+- When we click the node, we need to know that we are dragging it (console.log("Is dragging node!"))
+- When we click the node, we need to know that it has an attached SVG path and whether it's the M node 
+or the L node
+- Once we click off the node after dragging it (MouseUp), we recalculate either M or L simply by 
+getting the dragged node's final position
+- Using dragged node's final position, we set either L or M of the SVG to equate said position.
+
+We can also find a solution to use this dynamically, by updating the position when we are 
+dragging not when we push the mouse button up (IE the end of the drag), which essentially would show
+a cleaner svg animation.
+
+
+Problem of paths:
+Paths for now cannot know which node it's connected to, there is no mathematical representation that
+exists in reality.
+I'm going to use a matrix, say if:
+We have paths[1] connected to graphs[2] and graphs[3]
+We will have to use a hachetable / matrix to represent it. Matrices are more prone to confusion however
+I want to represent it as is:
+pathGraphs = {
+        paths[1] : {Graphs[2], Graphs[3]},
+        paths[2] : {Graphs[5], graphs[4]},
+        ect
+}
+This is important as for each path we need to know which element it's connected to.
+
+
+
+
+Updated:
+I have dealt with path's drawing updates, a relatively complicated yet awesome function that does the
+job perfectly. I'm impressed.
+

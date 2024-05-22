@@ -1,0 +1,223 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("Fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(93, 93, 93) rgb(55, 55, 55);
+}
+
+body {
+    background-color: rgb(31, 31, 31);
+    font-family: "Montserrat", Helvetica, sans-serif;
+    user-select: none;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menuTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.graph {
+    background-color: white;
+    border: 4px solid black;
+    border-color: black;
+    width: 65px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    cursor: pointer;
+
+
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 15px;
+    font-size: 30px;
+    user-select: none;
+
+}
+
+#arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+svg {
+    background-color: rgb(46, 46, 46);
+}
+
+#drawingArea {
+    background-image: url("images/WhiteDots.jpg");
+    background-size: contain;
+    width: 100%;
+    height: 620px;
+    
+    position: sticky;
+    z-index: 0;
+    
+}
+
+
+
+.buttons {
+    display: flex;
+   
+}
+
+.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    
+} 
+ 
+.btn:hover .btn-slide-show-text1 {
+    margin-left: 65px;
+} 
+ 
+.btn-bottom-stripe {
+    border: 0px;
+    background: rgb(255, 255, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    line-height: normal;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 16px 56px 22px;
+    border-radius: 6px;
+    margin: 0px 0px 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    
+} 
+ 
+.btn-bottom-stripe::after {
+    content: "";
+    display: block;
+    height: 7px;
+    width: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-size: 7px 7px;
+} 
+ 
+.btn-bottom-stripe:hover {
+    color: rgb(255, 255, 255);
+} 
+ 
+.btn-bottom-stripe:hover::after {
+    background-image: repeating-linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255) 1px, transparent 2px, transparent 5px);
+    animation: 12s linear 0s infinite normal forwards running stripe-slide;
+} 
+ 
+.btn-bottom-stripe--black {
+    color: rgb(51, 51, 51);
+    border: 2px solid rgb(51, 51, 51);
+} 
+ 
+.btn-bottom-stripe--black::after {
+    border-top: 2px solid rgb(51, 51, 51);
+    background-image: repeating-linear-gradient(45deg, rgb(51, 51, 51), rgb(51, 51, 51) 1px, transparent 2px, transparent 5px);
+} 
+ 
+.btn-bottom-stripe--black:hover {
+    background-color: rgb(51, 51, 51);
+} 
+
+.CheckBox {
+    background-color: red;
+}
+
+.algo {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.578);
+    box-shadow: 0 8px 32px 0 rgba(11, 13, 29, 0.37);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 0px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    width: 300px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+}
+
+.ModifyTable {
+    margin-top: 100px;
+    height: 400px;
+    justify-content: center;
+}
+
+.Modify {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.578);
+    box-shadow: 0 8px 32px 0 rgba(11, 13, 29, 0.37);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 0px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    width: 400px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+}
+
+
+.Credit {
+    font-family: "Montserrat", Helvetica, sans-serif; 
+    font-size: larger; 
+    text-align: center; 
+    color: rgb(5, 5, 5);
+}
+
+.About {
+    display: flexbox;
+    position: fixed;
+    justify-content: center;
+    font-family: "Montserrat", Helvetica, sans-serif;
+
+    background: rgba(255, 255, 255, 0.578);
+    box-shadow: 0 8px 32px 0 rgba(11, 13, 29, 0.37);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 0px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    width: 600px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+
+    overflow: auto;
+    padding: 15px;
+}
