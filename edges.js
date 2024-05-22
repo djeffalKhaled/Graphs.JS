@@ -186,11 +186,11 @@ function checkCheckbox() {
 
     if (checkbox.checked) {
         draw();
-        textNode.textContent = "Press to Confirm Edge";
+        textNode.textContent = "Confirmer Arêtes";
     } else {
         confirm(); 
         var textNode = label.childNodes[2];
-        textNode.textContent = "Draw Non-oriented Edge ";
+        textNode.textContent = "Dessiner Arêtes ";
         alert("Paths confirmed!");
     }
 }

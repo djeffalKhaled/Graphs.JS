@@ -19,8 +19,9 @@
     </svg>
 
     <div class = "menu">
-        <div class = "Buttons" id = "buttonsDiv">
-            <table class = "menuTable">
+        
+        <div class = "Options">
+            <table class = "OptionsTable">
                 <tr>
                     <td>
                         <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
@@ -28,30 +29,40 @@
                             Insérer Sommet
                         </label>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
                             <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
-                            Dessiner Arêtes 
+                            Tracer Arêtes 
                         </label>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
                             <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
-                            Dessiner Arc
+                            Tracer Arc
                         </label>
                     </td>
-                    <td>
-                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
-                            <button onclick="modifySideBar()" style = "display: none;"></button>
-                            Modifier
-                        </label>
-                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
                             <button onclick="algoSideBar()" style = "display: none;"></button>
                             Algorithmes
                         </label>
                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
+                            <button onclick="modifySideBar()" style = "display: none;"></button>
+                            Modifier
+                        </label>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
                             <button onclick="aboutSideBar()" id = "About" style = "display: none;"></button>
@@ -69,7 +80,7 @@
                         <td>
                             <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
                                 <input class = "CheckBox" type="checkbox" id = "deleteCheckbox" onclick="deleteElem()">
-                                Delete 
+                                Supprime 
                             </label>
                         </td>
                     </tr>
@@ -77,7 +88,7 @@
                         <td>
                             <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
                                 <input onclick= "addWeightsCheckBox()" class = "CheckBox" type="checkbox" id = "weightCheckbox">
-                                Add weights to paths
+                                Ajouter les Poids au Sommets
                             </label>
                             <script src = "edges.js"></script>
                         </td>
@@ -86,7 +97,7 @@
                         <td>
                             <label class = "btn btn-bottom-stripe btn-bottom-stripe--black">
                                 <input onclick= "graphValuesCheckBox()" class = "CheckBox" type="checkbox" id = "valuesCheckBox">
-                                Change Node Values 
+                                Change les Values des Sommets
                             </label>
                         </td>
                     </tr>
@@ -94,10 +105,8 @@
                         <td>
                             <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
                                 <button onclick="save()" style = "display: none;"></button>
-                                Save
+                                Sauvgarder 
                             </label>
-                            
-                            
                         </td>
                     </tr>
                     <tr>
@@ -113,21 +122,49 @@
         </div>
         
     
-        <div class = "AlgorithmsSideBar" id = "AlgoSideBar">
-            <div class = "algo">
-                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
-                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                    Djikstra 
-                </label>
-                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem2">
-                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                    Wershell 
-                </label>
-                <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem3">
-                    <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                    Bonefeud 
-                </label>
-            </div>
+        <div class = "Algo" id = "AlgoSideBar">
+            <table class = "AlgoTable">
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            Krsukal 
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            Prim 
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            Djikstra 
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem2">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            Bellman-Ford  
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem3">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            Bonefeud 
+                        </label>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <div class = "About" id = "AboutSideBar">
@@ -141,22 +178,20 @@
             </div>
             <br>
             <br>
-            <div class = "Guide" style = "font-size: 17px;">
-                GUIDE: <br>
-                Insert Graph: Inserts a node and gives it a value based on how many existant nodes.<br>
-                Draw Path: Draws an edge by default and awaits confirmation by the user in order to make the changes final.<br>
-                Delete: Deletes an element of type node or edge, chosen by clicking on said element. <br>
-                Modify:
+            <div class="Guide" style="font-size: 17px;">
+                <b>GUIDE :</b> <br>
+                <b>Insérer un sommet :</b> Insère un sommet et lui attribue une valeur<br>
+                <b>Tracer un Chemin :</b> Trace un arc/arete et attend la confirmation de l'utilisateur pour la mise a jour<br>
+                <b>Algorithmes :</b> Montre la fonctionnalité de nombreux algorithmes de théorie des graphes.<br>
+                <b>Modifier :</b>
                 <ol>
-                    <li>Change Graph Type: Changes the graph's type from non-oriented to oriented, which changes the behaviour of the Draw Path button.</li>
-                    <li>Add Weight to Paths: Adds a weight of value 0 by default to every existant paths, transforming the 
-                        graph into a network. You change the value of each weight by click on the numbers</li>
-                    <li>Change Node Values: Allows the user to change the nodes' values</li>
-                    <li>Confirm Graph Values: Confirms both the weight and the graph values.</li>
-                    <li>Save: Saves the graph into the database</li>
-                    <li>Save: Loads the graph from the database</li>
+                    <li><b>Supprimer :</b> Supprime un élément de type nœud ou arc, choisi en cliquant sur ledit élément.</li>
+                    <li><b>Ajouter des Poids aux Chemins :</b> Ajoute un poids de valeur 0 par défaut à tous les chemins existants. Vous pouvez modifier la valeur de chaque poids en cliquant sur les chiffres.</li>
+                    <li><b>Changer les Valeurs des Nœuds :</b> Permet à l'utilisateur de changer les valeurs des nœuds.</li>
+                    <li><b>Sauvgarder :</b> Enregistre le graphique dans la base de données.</li>
+                    <li><b>Charger :</b> Charge le graphique depuis la base de données.</li>
                 </ol>
-                Algorithms: Shows the functionality of many Graph Theory algorithms.
+                
             </div>
         </div>
 

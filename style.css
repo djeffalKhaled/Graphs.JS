@@ -9,20 +9,46 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: rgb(31, 31, 31);
     font-family: "Montserrat", Helvetica, sans-serif;
     user-select: none;
+    height: 100vh;
 }
 
-.menu {
+.Options {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    width: 320px;
+    height: 100vh;
+    align-items: center;
+    overflow: none;
+
+
+
+    background: rgba(31, 31, 31, 0.974);
+    box-shadow: 0 8px 32px 0 rgba(11, 13, 29, 0.37);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 0px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.OptionsTable {
     width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+/* Centers the buttons horizontally*/
+.OptionsTable td {
+    text-align: center; 
+    vertical-align: middle;
 }
 
-.menuTable {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
 
 .graph {
     background-color: white;
@@ -60,10 +86,9 @@ svg {
 #drawingArea {
     background-image: url("images/WhiteDots.jpg");
     background-size: contain;
+    position: absolute;
     width: 100%;
-    height: 620px;
-    
-    position: sticky;
+    height: 100vh;
     z-index: 0;
     
 }
@@ -78,7 +103,6 @@ svg {
 .btn {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    
 } 
  
 .btn:hover .btn-slide-show-text1 {
@@ -150,7 +174,7 @@ svg {
     background-color: red;
 }
 
-.algo {
+.Algo {
     display: flex;
     position: fixed;
     justify-content: center;
@@ -164,11 +188,13 @@ svg {
 
     width: 300px;
     height: 100vh;
+    margin-left: 320px;
     top: 0px;
     z-index: 1;
-}
 
-.ModifyTable {
+    
+}
+.AlgoTable {
     margin-top: 100px;
     height: 400px;
     justify-content: center;
@@ -186,10 +212,16 @@ svg {
     border-radius: 0px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-    width: 400px;
+    width: 450px;
     height: 100vh;
+    margin-left: 320px;
     top: 0px;
     z-index: 1;
+}
+.ModifyTable {
+    margin-top: 100px;
+    height: 400px;
+    justify-content: center;
 }
 
 
@@ -215,6 +247,7 @@ svg {
 
     width: 600px;
     height: 100vh;
+    margin-left: 320px;
     top: 0px;
     z-index: 1;
 
