@@ -12,16 +12,38 @@
         <canvas id = "canvas" width = "500px" 
     height="500px" style = "background-color: rgb(52, 52, 52);"></canvas>
     -->
-    
 
     <svg id = "drawingArea">
-
+        <defs>
+            <!--Arrow head for paths-->
+            <marker
+              id="arrow"
+              viewBox="0 0 10 10"
+              refX="19"
+              refY="5"
+              markerWidth="3"
+              markerHeight="3"
+              orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" />
+            </marker>
+        </defs>
     </svg>
 
     <div class = "menu">
+        <div class = "Console">
+            
+        </div>
         
         <div class = "Options">
             <table class = "OptionsTable">
+                <tr>
+                    <td>
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "graphTypeLabel">
+                            <input class = "CheckBox" type="checkbox" id = "graphtypebtn" onclick="defineType()" checked>
+                            Orienté
+                        </label>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
@@ -32,15 +54,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
-                            <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
-                            Tracer Arêtes 
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawLabel">
+                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "drawPathLabel">
                             <input class = "CheckBox" type="checkbox" id = "pathCheckbox" onclick="checkCheckbox()">
                             Tracer Arc
                         </label>
@@ -194,19 +208,20 @@
                 
             </div>
         </div>
-
-
-        
-    
         
     </div>
 
-    
+   
+
     
     <script src = "graphs.js"></script>
 
+    <script src = "graphtype.js"></script>
+
     <script src = "edges.js"></script>
     <script src = "arcs.js"></script>
+
+    
 
     <script src = "delete.js"></script>
 

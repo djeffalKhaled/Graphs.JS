@@ -39,6 +39,10 @@ function handleMouseDown(event) {
         path.setAttribute("stroke", "green");
         path.setAttribute("stroke-width", "10");
 
+        if (graphType === "oriented") {
+            path.setAttribute("marker-end", "url(#arrow)");
+        }
+        
 
         // gets the first clicked node's center positions
         var rect = event.target.getBoundingClientRect();
@@ -181,16 +185,28 @@ function confirm() {
 
 function checkCheckbox() {
     var checkbox = document.getElementById('pathCheckbox');
-    var label = document.getElementById("drawLabel");
+    var label = document.getElementById("drawPathLabel");
     var textNode = label.childNodes[2];
+    var oldTextContent;
+    
 
     if (checkbox.checked) {
         draw();
-        textNode.textContent = "Confirmer Arêtes";
+        oldTextContent = textNode.textContent;
+        if (graphType === "oriented") {
+            textNode.textContent = "Confirmer Arc";
+        } else {
+            textNode.textContent = "Confirmer Arête";
+        }
+        
     } else {
         confirm(); 
         var textNode = label.childNodes[2];
-        textNode.textContent = "Dessiner Arêtes ";
+        if (graphType === "oriented") {
+            textNode.textContent = "Tracer Arc";
+        } else {
+            textNode.textContent = "Tracer Arête";
+        }
         alert("Paths confirmed!");
     }
 }

@@ -254,3 +254,23 @@ svg {
     overflow: auto;
     padding: 15px;
 }
+
+
+.Console {
+    display: flexbox;
+    position: fixed;
+    justify-content: center;
+    font-family: "Montserrat", Helvetica, sans-serif;
+
+    background: rgba(255, 255, 255, 0.307);
+    
+    border: 2px solid rgba(0, 0, 0, 0.18);
+    
+    bottom: 0;
+    right: 0;
+    margin-left: 500px;
+
+
+    font-size: 15px;
+    color: rgb(34, 34, 34);
+}

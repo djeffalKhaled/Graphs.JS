@@ -60,7 +60,7 @@ insertButton.addEventListener("click", (e) => {
     newGraph.textContent = "" + graphs.length;
     newGraph.style.position = "absolute";
     newGraph.style.top = "10px";
-    newGraph.style.left = "10px";
+    newGraph.style.left = "350px";
     
     makeDraggable(newGraph);
 
