@@ -1,7 +1,9 @@
-var graphs = []
+var graphs = []; // Set of sommets' HTML content
+var sommets = []; // Set of sommets' values
 
 var draggedGraph;
 
+console1 = document.getElementById("Console1"); // For Printing graphs and edges to the interface
 
 // Handles dragging of graphs 
 function makeDraggable(element) {
@@ -65,12 +67,13 @@ insertButton.addEventListener("click", (e) => {
     makeDraggable(newGraph);
 
     graphs.push(newGraph);
-    console.log("created new graph: ", newGraph);
+    sommets.push(newGraph.textContent);
+    console.log("Created new node: ", newGraph);
+    console.log("Node value: ", sommets);
     console.log("Total graphs: ", graphs.length);
+    console1.textContent = sommets.join(',');
     
     document.body.appendChild(newGraph);
 });
 
-
-// Paths
 

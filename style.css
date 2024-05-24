@@ -256,7 +256,7 @@ svg {
 }
 
 
-.Console {
+.ConsoleTable {
     display: flexbox;
     position: fixed;
     justify-content: center;

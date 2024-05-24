@@ -15,11 +15,16 @@ var firstPosX, firstPosY, lastPosX, lastPosY;
 var path;
 var svg = document.getElementById("drawingArea");
 var drawnPaths = []; 
-var E = []; // Set of non-oriented Edges
+
+var E = []; // Set of Edges (Arcs OR Arettes) represented as such ex. [[#graph1, #graph0], [#graph2, #graph0]]
+var EdgeValues = []; // Set of edges' values represented as such ex. [1, 0, 2, 0]
+
 var connectedNodes = []; // The nodes the path will connect to while drawing a path
+var connectedNodesValue = []; // The Value of said nodes instead of their own HTML element
+
+var console2 = document.getElementById("Console2");
 
 var click = 0;
-
 
 // Draws a path / edge when the user clicks on at most 2 given nodes
 function handleMouseDown(event) {
@@ -55,6 +60,7 @@ function handleMouseDown(event) {
 
 
         connectedNodes.push(event.target);
+        EdgeValues.push(event.target.textContent);
         
     } else if (click == 2) {
         console.log("Clicked on ", event.target.innerHTML);
@@ -76,10 +82,15 @@ function handleMouseDown(event) {
         console.log("current drawn paths: ", drawnPaths);
 
         connectedNodes.push(event.target);
+        EdgeValues.push(event.target.textContent);
+
         E.push(connectedNodes); 
         console.log("current edges set E = ", E);
+        console.log("EdgeValues:", EdgeValues);
 
         connectedNodes = [];
+
+        console2.textContent = EdgeValues.join(','); // joins the array into a print-able string then prints it
     }
     
    

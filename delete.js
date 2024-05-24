@@ -4,7 +4,7 @@ function handleDeletion(e) {
     if (checkbox.checked) {
         var element = e.target; // Get the clicked element
         console.log(e.target);
-        console.log(e.id);
+        console.log(element.tagName );
         if (element.className === "graph") {
             console.log("graphs pre deletion:", graphs);
             var index = graphs.indexOf(element);
@@ -16,7 +16,7 @@ function handleDeletion(e) {
             console.log("deleted: ", element);
             console.log("Total graphs left:", graphs);
         }
-        else if (element.id  == "/^path\d+$/") {
+        else if (element.tagName  == "path") {
             console.log("WITHIN!!!!!!!!!");
             var index = drawnPaths.indexOf(element);
             if (index !== -1) {
