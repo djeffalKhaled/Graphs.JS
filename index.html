@@ -37,13 +37,28 @@
                     <div class = "Console" id = "Console1">
                         ...
                     </div>
-                    
                 </td>
             </tr>
             <tr>
                 <td>
                     Arcs/Arétes:
                     <div class = "Console" id = "Console2">
+                        ...
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Poids:
+                    <div class = "Console" id = "Console3">
+                        ...
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Résultats:
+                    <div class = "Console" id = "Console4">
                         ...
                     </div>
                 </td>
@@ -132,22 +147,6 @@
                             </label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
-                                <button onclick="save()" style = "display: none;"></button>
-                                Sauvgarder 
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="btn btn-bottom-stripe btn-bottom-stripe--black">
-                                <button onclick="load()" style = "display: none;"></button>
-                                Load
-                            </label>
-                        </td>
-                    </tr>
                 </table>
             </div>
         </div>
@@ -158,16 +157,16 @@
                 <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
-                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                            Krsukal 
+                            <button onclick="prim_CalculateTree()" style = "display: none;"></button>
+                            Prim 
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
-                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                            Prim 
+                            <button onclick="kruskal_CalculateTree()" style = "display: none;"></button>
+                            Krsukal 
                         </label>
                     </td>
                 </tr>
@@ -184,14 +183,6 @@
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem2">
                             <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
                             Bellman-Ford  
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem3">
-                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
-                            Bonefeud 
                         </label>
                     </td>
                 </tr>
@@ -244,7 +235,11 @@
 
     <script src = "algo.js"></script>
     <script src = "modify.js"></script>
+    <script src = "weights.js"></script>
     <script src = "about.js"></script>
+
+    <script src = "prim.js"></script>
+    <script src = "kruskal.js"></script>
 
 
     <script src = "SaveLoad.js"></script>

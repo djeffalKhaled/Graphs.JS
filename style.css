@@ -261,6 +261,7 @@ svg {
     position: fixed;
     justify-content: center;
     font-family: "Montserrat", Helvetica, sans-serif;
+    text-align: center;
 
     background: rgba(255, 255, 255, 0.307);
     

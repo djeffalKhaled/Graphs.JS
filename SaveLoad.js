@@ -1,10 +1,10 @@
+// Depricated
 function save() {
     var htmlContent = document.documentElement.outerHTML;
     console.log(htmlContent);
     localStorage.setItem('savedHTML', htmlContent);
     alert('Graph content saved!', htmlContent);
 }
-
 
 function load() {
     
