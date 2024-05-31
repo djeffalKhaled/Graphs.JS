@@ -13,6 +13,19 @@ function kruskal_CalculateTree() {
     console.log("Calculated Minimum Spanning Tree using Prim:", minimumSpanningTree);
 }
 
+function kruskal_CalculateTree2() {
+    var minimumSpanningTree = prim(sommets, EdgeValues, poids);
+    var strMST = "";
+    minimumSpanningTree.forEach(MSTarray => {
+        strMST += '(' + MSTarray.join(',') + ')';
+        console.log("MSTarray", MSTarray);
+        console.log("strMST", strMST);
+    });
+    
+    console4.textContent = strMST;
+    console.log("Calculated Minimum Spanning Tree using Prim:", minimumSpanningTree);
+}
+
 class DisjointSet {
     constructor(size) {
         this.parent = Array(size).fill(null).map((_, index) => index);

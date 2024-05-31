@@ -57,6 +57,14 @@
             </tr>
             <tr>
                 <td>
+                    Inputs:
+                    <div class = "Console" id = "Console5">
+                        <input id = "djikstrainpt" name = "r" type = "number" style = "width: 50px">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     Résultats:
                     <div class = "Console" id = "Console4">
                         ...
@@ -68,6 +76,12 @@
         
         <div class = "Options">
             <table class = "OptionsTable">
+                <tr>
+                    <td>
+                        <span style = "color: white; font-size: 25px;">Theorie Des Graphes</span>
+                        <span style = "color: rgb(196, 196, 196);">Representation en Javascript</span>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "graphTypeLabel">
@@ -165,7 +179,7 @@
                 <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
-                            <button onclick="kruskal_CalculateTree()" style = "display: none;"></button>
+                            <button onclick="kruskal_CalculateTree2()" style = "display: none;"></button>
                             Krsukal 
                         </label>
                     </td>
@@ -173,7 +187,7 @@
                 <tr>
                     <td>
                         <label class = "btn btn-bottom-stripe btn-bottom-stripe--black" id = "elem1">
-                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="algoSideBar()">
+                            <input class = "CheckBox" type="checkbox" id = "algoCheckbox" onclick="callDjisktra()">
                             Djikstra 
                         </label>
                     </td>
@@ -240,6 +254,7 @@
 
     <script src = "prim.js"></script>
     <script src = "kruskal.js"></script>
+    <script src = "djikstra.js"></script>
 
 
     <script src = "SaveLoad.js"></script>
